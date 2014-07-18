@@ -1,3 +1,1 @@
-teste de leitura 1;
-teste de leutura 2 ;
-teste de leitura 3;
+RIO2 - CENTRO ;1;05:40;LA

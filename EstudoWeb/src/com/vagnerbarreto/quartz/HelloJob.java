@@ -4,7 +4,7 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
-import com.br.vagnerbarreto.leitura.LerArquivos;
+import com.br.vagnerbarreto.controller.LerArquivosController;
 
 
 public class HelloJob implements Job
@@ -12,7 +12,7 @@ public class HelloJob implements Job
 	public void execute(JobExecutionContext context)
 	throws JobExecutionException {
 		
-		LerArquivos arquivos = new LerArquivos();
+		LerArquivosController arquivos = new LerArquivosController();
 		arquivos.arquivo();
 		
 	}
