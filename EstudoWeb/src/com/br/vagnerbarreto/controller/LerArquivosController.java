@@ -8,6 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.StringTokenizer;
 
+import br.com.vagnerbarreto.dao.GradeDAO;
+
 import com.br.vagnerbarreto.bean.GradeBean;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
@@ -45,17 +47,17 @@ public class LerArquivosController {
 					// Campo Horario
 					dados = st.nextToken();
 					Date data = formataData(dados);
-					
+
 					gradeBean.setHorario(data);
 
 					// Campo Intnerario
 					dados = st.nextToken();
 					gradeBean.setIntinerario(dados);
 
-					System.out.println(" Linha  :" + gradeBean.getLinha());
-					System.out.println(" Ônibus  :" + gradeBean.getNumOnibus());
-					System.out.println(" Horário  :" + gradeBean.getHorario());
-					System.out.println(" Via  :" + gradeBean.getIntinerario());
+					GradeDAO dao = new GradeDAO();
+
+					dao.insere(gradeBean.getLinha(), gradeBean.getNumOnibus(),
+							gradeBean.getHorario(), gradeBean.getIntinerario());
 
 				}
 			}
@@ -78,8 +80,7 @@ public class LerArquivosController {
 	public static void main(String[] args) throws java.text.ParseException {
 		LerArquivosController t = new LerArquivosController();
 		t.arquivo();
-		
-		
+
 	}
 
 }

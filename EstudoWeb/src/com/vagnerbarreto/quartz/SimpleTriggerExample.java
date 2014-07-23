@@ -42,7 +42,7 @@ public class SimpleTriggerExample implements ServletContextListener {
 				.withIdentity("dummyTriggerName", "group1")
 				.withSchedule(
 						SimpleScheduleBuilder.simpleSchedule()
-								.withIntervalInMinutes(2).repeatForever())
+								.withIntervalInHours(24).repeatForever())
 				.build();
 
 		// schedule it

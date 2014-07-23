@@ -6,14 +6,34 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
- 
+
 <h:head>
 </h:head>
 <h:body>
-	  
- <h:form>
-	   <h:outputText value="#{grade.nome}"  />
-	</h:form>
+
+	<h:form>
 	
+	<div id="teste" style="position:relative;margin-right:35%;">
+		<p:dataTable var="gra" value="#{grade.listarGrade}" >
+
+			<p:column headerText="Linha">
+				<h:outputText value="#{gra.linha}" />
+			</p:column>
+			
+			<p:column headerText="Ônibus">
+				<h:outputText value="#{gra.numOnibus}" />
+			</p:column>
+			
+			<p:column headerText="Horário">
+				<h:outputText value="#{gra.horario}" />
+			</p:column>
+			
+			<p:column headerText="Intinerário">
+				<h:outputText value="#{gra.intinerario}"  />
+			</p:column>
+		</p:dataTable>
+</div>		
+	</h:form>
+
 </h:body>
 </html>
