@@ -1,0 +1,19 @@
+<project name="EstudoWeb" basedir="." default="build">
+
+    <property name="dist.dir" location="dist"/>
+
+    <target name="build">
+        <mkdir dir="${dist.dir}" />
+
+        <war destfile="${dist.dir}/EstudoWeb.war" webxml="WebContent/WEB-INF/web.xml">
+            <fileset dir="${basedir}">
+                <include name="**/*.jsp"/>
+                <include name="**/*.html"/>
+                <include name="**/*.xhtml"/>
+            </fileset>
+            <lib dir="WebContent/WEB-INF/lib" />
+            <classes dir="src"/>
+        </war>
+    </target>
+
+</project>
